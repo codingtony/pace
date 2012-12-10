@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Running Pace Tools</title>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+		<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+		<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+		<link type="text/css" href="css/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Running Pace Tools</h1>
+			<h2>Running pace converter</h2>
+			<div class="row">
+				<div class="span3">
+					<p id="minkm">6:30 min/km</p>
+					<p id="minmile">10:28 min/mile</p>
+					<p id="kmh">09.23 km/h</p>
+					<p id="mph">05.74 mph</p>
+				</div>				
+				<div class="span3">
+					<div class="red" id="speed-slide-mindist"></div>
+				</div>				
+			</div>				
+		</div>				
+		<div class="container">
+				<h2>Running pace calculator</h2>
+				<div class="row">
+					<div class="span4">
+						<h3>Pace</h3>
+					</div>
+					<div class="span4">
+						<h3>Distance</h3>
+					</div>
+					<div class="span4">
+						<h3>Time</h3>
+					</div>
+				</div>					
+
+				<div class="row">
+					<div class="btn-group" data-toggle="buttons-radio">
+						<div class="span4">
+							<button type="button" value="pace" class="btn btn-danger lock"  data-toggle-value="pace" data-toggle="button">Lock</button>
+						</div>					
+						<div class="span4">
+							<button type="button" value="dist" class="btn btn-danger lock"  data-toggle-value="dist" data-toggle="button">Lock</button>
+						</div>
+						<div class="span4">
+							<button type="button" value="time" class="btn btn-danger lock" data-toggle-value="time" data-toggle="button">Lock</button>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span4">
+						<p></p>
+					</div>					
+					<div class="span4">
+						<p></p>
+					</div>
+					<div class="span4">
+						<p></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span2">
+						<p id="minkm_c">6:30 min/km</p>
+						<p id="minmile_c">10:28 min/mile</p>
+						<p id="kmh_c">09.23 km/h</p>
+						<p id="mph_c">05.74 mph</p>
+
+					</div>
+					<div class="span2" data-toggle-name="lockbt" data-toggle="buttons-radio">
+						<div id="speed-slide-mindist_c"></div>
+					</div>					
+					<div class="span4">
+						<input id="dist" type="text" maxlength="9"></input>
+						<div class="btn-group">
+						
+							<a id="unit" class="btn btn-primary" href="#." value="m">m</a>
+							<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="select_unit" href="#." value="m">m</a></li>
+								<li><a class="select_unit" href="#." value="km">km</a></li>
+								<li><a class="select_unit" href="#." value="mile">mile</a></li>
+							</ul>
+						</div>					
+						<div class="btn-group">
+							<a class="btn btn-primary" href="#.">
+							  Common Distances
+							</a>
+							
+							<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="commdist" href="#." value="100">100m</a></li>
+								<li><a class="commdist" href="#." value="200">200m</a></li>
+								<li><a class="commdist" href="#." value="400">400m</a></li>
+								<li><a class="commdist" href="#." value="800">800m</a></li>
+								<li><a class="commdist" href="#." value="804.67">1/2mile</a></li>
+								<li><a class="commdist" href="#." value="1000">1km</a></li>
+								<li><a class="commdist" href="#." value="1200">1200m</a></li>
+								<li><a class="commdist" href="#." value="1609.34">Mile</a></li>
+								<li><a class="commdist" href="#." value="1000">1km</a></li>
+								<li><a class="commdist" href="#." value="1200">1200m</a></li>
+								<li><a class="commdist" href="#." value="1609.34">Mile</a></li>		
+								<li><a class="commdist" href="#." value="5000">5km</a></li>		
+								<li><a class="commdist" href="#." value="10000">10km</a></li>		
+								<li><a class="commdist" href="#." value="15000">15km</a></li>		
+								<li><a class="commdist" href="#." value="20000">20km</a></li>	
+								<li><a class="commdist" href="#." value="42195">Marathon</a></li>				
+							</ul>
+						</div>										
+
+					</div>
+				<div class="span4">
+						<input id="time" type="text"><small>[HH:]mm:ss</small></input>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div id="footer">
+				<p><a href="http://codingtony.com/">Tony Bussières 2011 - 2012</a></p>
+			</div><!-- /footer -->
+		</div>
+        <script type="text/javascript" src="js/run.js"></script>
+		<script src="bootstrap/js/bootstrap.js"></script>
+		<script src="js/jquery-1.6.2.min.js"></script>
+		<script src="js/jquery-ui-1.8.16.custom.min.js"></script>
+
+		<script>
+		$(function() {
+			$( "#speed-slide-mindist" ).slider({
+				min:-720,
+				max:-120,
+				value:-390,
+				step:-1,
+				animate: true,
+				orientation: "vertical",
+				slide: function( event, ui ) {
+					minkm_s=-1 * ui.value;
+					minmi_s=convertPaceSpeed(minkm_s,"minkm","minmi");
+					mph=pad(convertPaceSpeed(minkm_s,"minkm","mph"),5);
+					kmh=pad(convertPaceSpeed(minkm_s,"minkm","kmh"),5);
+					$( "#minmile" ).text( convertSecsToStr(minmi_s) +" min/mile");
+					$( "#minkm" ).text(convertSecsToStr(minkm_s) + " min/km" );
+					$( "#kmh" ).text(kmh+ " km/h" );
+					$( "#mph" ).text(mph+ " mph" );
+				}
+			});
+		});
+		$(function() {
+			$( ".commdist").click(function () {
+				unit=$("#unit").attr("value");
+				dist_m=$(this).attr("value")
+				$("#dist").val(meterTo(dist_m,unit));
+			});
+		});
+		$(function() {
+			$( ".select_unit").click(function () {
+				dist=$("#dist").val();
+				oldunit=$("#unit").attr("value");
+				$("#unit").attr("value",($(this).attr("value")));
+				newunit=($(this).attr("value"));
+				$("#unit").text(newunit);
+				$("#unit_input").val(newunit);
+				dist_m=convertToMeter(dist,oldunit);
+				
+				$("#dist").val(meterTo(dist_m,newunit));
+			});
+		});
+		$('#dist').keypress(function(event) {
+			if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+				event.preventDefault();
+			}
+		});	
+		$('#time').keypress(function(event) {
+			time=$(this).val();
+			allowsemi=true;
+			allowonlysemi=false;
+			allownothing=false;
+			if (time.length == 0) {
+				allowsemi=false;
+			}
+			
+			if ((idx=time.indexOf(':')) != -1) {
+				allowsemi=false;
+				afterfirstdelim=time.substring(idx,time.length);
+				if (afterfirstdelim.length == 3) {
+						allowsemi=true;
+						allowonlysemi=true;
+				}
+				if (idx2=afterfirstdelim.indexOf(':') != -1) {
+					allownothing = (afterfirstdelim.substring(idx2,afterfirstdelim.length).length > 4);
+				}
+				
+			}
+			if ((allowonlysemi && event.which != 58) || allownothing) {
+				event.preventDefault();
+			} else {
+				if (event.which == 58 && !allowsemi) {
+					event.preventDefault();
+				} else if (event.which < 48 || event.which > 58) {
+					event.preventDefault();
+				}
+			}
+		});	
+		$('#time').change(function() {
+			if ($(this).val().length > 1) {
+				$(".lock[value=time]").removeClass("disabled");
+			}
+		});
+		$(function() {
+			$("#dist").change(function() {
+			});
+		});
+/*		
+			$( ".lock" ).click(function() {
+					toggle=true;
+					lockid=$(this).val();
+					
+					switch (lockid) {
+						case 'dist':
+							if (! $("#dist").val()) {
+								toggle=false;
+								return;
+							}
+					}
+					if (toggle) {
+						$( ".lock" ).removeClass("active");
+					}
+			});
+
+		});
+*/
+		$(function() {
+			$( "#speed-slide-mindist_c" ).slider({
+				min:-720,
+				max:-120,
+				value:-390,
+				step:-1,
+				orientation: "vertical",
+				slide: function( event, ui ) {
+					minkm_s=-1*ui.value;
+					minmi_s=convertPaceSpeed(minkm_s,"minkm","minmi");
+					mph=pad(convertPaceSpeed(minkm_s,"minkm","mph"),5);
+					kmh=pad(convertPaceSpeed(minkm_s,"minkm","kmh"),5);
+					$( "#minmile_c" ).text( convertSecsToStr(minmi_s) +" min/mile");
+					$( "#minkm_c" ).text(convertSecsToStr(minkm_s) + " min/km" );
+					$( "#kmh_c" ).text(kmh+ " km/h" );
+					$( "#mph_c" ).text(mph+ " mph" );
+				}
+			});
+			
+		});		
+		</script>		
+	</body>
+</html>
