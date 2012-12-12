@@ -46,13 +46,13 @@
 				<div class="row">
 					<div class="btn-group" data-toggle="buttons-radio">
 						<div class="span4">
-							<button type="button" value="pace" class="btn btn-danger lock"  data-toggle-value="pace" data-toggle="button">Lock</button>
+							<button type="button" value="pace" class="btn btn-info lock"  data-toggle-value="pace" data-toggle="button">Free</button>
 						</div>					
 						<div class="span4">
-							<button type="button" value="dist" class="btn btn-danger lock"  data-toggle-value="dist" data-toggle="button">Lock</button>
+							<button type="button" value="dist" class="btn btn-info lock active"  data-toggle-value="dist" data-toggle="button">Free</button>
 						</div>
 						<div class="span4">
-							<button type="button" value="time" class="btn btn-danger lock" data-toggle-value="time" data-toggle="button">Lock</button>
+							<button type="button" value="time" class="btn btn-info lock" data-toggle-value="time" data-toggle="button">Free</button>
 						</div>
 					</div>
 				</div>
@@ -82,7 +82,7 @@
 						<input id="dist" type="text" maxlength="9"></input>
 						<div class="btn-group">
 						
-							<a id="unit" class="btn btn-primary" href="#." value="m">m</a>
+							<a id="unit" class="btn btn-primary" href="#." value="km">km</a>
 							<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
 								<span class="caret"></span>
 							</a>
@@ -124,6 +124,13 @@
 				<div class="span4">
 						<input id="time" type="text"><small>[HH:]mm:ss</small></input>
 				</div>
+			</div>
+			<div class="row">
+				<div class="span4"></div>
+				<div class="span4">
+					<button type="button" value="pace" class="btn btn-success btn-large calc-btn">Calculate</button>
+				</div>
+				<div class="span4"></div>
 			</div>
 		</div>
 		<div class="container">
@@ -182,6 +189,7 @@
 				event.preventDefault();
 			}
 		});	
+/*		
 		$('#time').keypress(function(event) {
 			time=$(this).val();
 			allowsemi=true;
@@ -213,42 +221,36 @@
 				}
 			}
 		});	
-		$('#time').change(function() {
-			if ($(this).val().length > 1) {
-				$(".lock[value=time]").removeClass("disabled");
-			}
-		});
-		$(function() {
-			$("#dist").change(function() {
-			});
-		});
-/*		
-			$( ".lock" ).click(function() {
-					toggle=true;
-					lockid=$(this).val();
-					
-					switch (lockid) {
-						case 'dist':
-							if (! $("#dist").val()) {
-								toggle=false;
-								return;
-							}
-					}
-					if (toggle) {
-						$( ".lock" ).removeClass("active");
-					}
-			});
-
-		});
 */
+	
+		$( ".calc-btn" ).click(function() {
+				toggle=true;
+				lockid=$(".lock.active").data().toggleValue;
+				unit=$("#unit").attr("value");
+				dist_m=convertToMeter($("#dist").val(),unit);
+				pace=$( "#speed-slide-mindist_c" ).slider('value') * -1;
+				time_s=convertStrToSecs($("#time").val());
+				switch (lockid) {
+					case "dist":
+						dist_m = time_s /  pace * 1000;
+						$("#dist").val(meterTo(dist_m,unit));
+						break;
+					case "time":
+						time_s = Math.round( dist_m / 1000 * pace);
+						$("#time").val(convertSecsToStr(time_s));
+						break;
+					case "pace":
+						pace = time_s * 1000 / dist_m;
+						$( "#speed-slide-mindist_c" ).slider('value',pace * - 1);
+
+						break;
+				}
+		});
+
+	
+
 		$(function() {
-			$( "#speed-slide-mindist_c" ).slider({
-				min:-720,
-				max:-120,
-				value:-390,
-				step:-1,
-				orientation: "vertical",
-				slide: function( event, ui ) {
+			ff = function( event, ui ) {
 					minkm_s=-1*ui.value;
 					minmi_s=convertPaceSpeed(minkm_s,"minkm","minmi");
 					mph=pad(convertPaceSpeed(minkm_s,"minkm","mph"),5);
@@ -257,10 +259,19 @@
 					$( "#minkm_c" ).text(convertSecsToStr(minkm_s) + " min/km" );
 					$( "#kmh_c" ).text(kmh+ " km/h" );
 					$( "#mph_c" ).text(mph+ " mph" );
-				}
+				};
+			$( "#speed-slide-mindist_c" ).slider({
+				min:-1200,
+				max: -30,
+				value:-390,
+				step:-1,
+				orientation: "vertical",
+				slide: ff,
+				change: ff
 			});
 			
 		});		
 		</script>		
 	</body>
 </html>
+
