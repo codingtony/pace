@@ -67,7 +67,11 @@
     <div class="panel-body">
         <label>Distance</label>
     	<div class="panel">
-	  <input type="text" id="inputDistance" value="10"></input>
+    		  <div class="row">
+	     <div class="col-lg-3">
+	       <input type="text" id="inputDistance" value="10"></input>
+	      </div>
+	      <div class="col-lg-9">
 	  <div class="btn-group" data-toggle="buttons" id="distUnitButton" >
     <label class="btn btn-danger active distance_unit"  >
     <input type="radio" value="km">km
@@ -80,6 +84,11 @@
   </label>	  
 	  
 	 </div>	  
+	      
+	      </div>
+	   </div>
+    	
+	
 	 <div class="btn-toolbar">
 	   <button class="btn btn-lg btn-primary commondist" type="button" value="400">400m</button>
 	   <button class="btn btn-lg btn-primary commondist" type="button" value="1000">1K</button>
@@ -98,7 +107,12 @@
     <div class="panel-body">
     	<label>Time</label>
     	<div class="panel">
-	  <input type="text" id="inputTime" value="01:00:00"></input>[HH:]MM:SS
+	  <div class="row">
+	     <div class="col-lg-3">
+	      <input type="text" id="inputTime" value="01:00:00"></input>
+	      </div>
+	      <div class="col-lg-9">[HH:]MM:SS</div>
+	   </div>
 	 </div>
       </div>
   </div>
