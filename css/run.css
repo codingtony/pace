@@ -2,3 +2,6 @@ li {
     list-style-type:none;	
     position:relative;
 }
+small {
+    font-size:10px;
+}
