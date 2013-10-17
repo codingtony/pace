@@ -35,32 +35,40 @@
          <div class="panel panel-primary" id="pacePanel">
             <div class="panel-body">
                <label>Pace</label>
-               <div class="panel tree">
-                  <ul id="paceResult" class="list-unstyled">
-                     <li><span id="pacemetric">06:00</span> min/km</li>
-                     <li><span id="paceimperial">09:39</span> min/mile</li>
-                     <li><span id="speedmetric">10.00</span> km/h</li>
-                     <li><span id="speedimperial">06.21</span> mph</li>
-                  </ul>
-                  <div class="btn-toolbar">
-                     <button class="btn btn-lg" type="button" id="slower2">slower (--)</button>
-                     <button class="btn btn-lg" type="button" id="slower1">slower (-)</button>
-                     <button class="btn btn-lg" type="button" id="faster1">faster (+)</button>
-                     <button class="btn btn-lg" type="button" id="faster2">faster (++)</button>
-                  </div>
+              
+                  <div class="row">
+                     <div class="col-xs-6"  id="paceResult">
+                        <ul class="list-unstyled">
+                           <li><span id="pacemetric">06:00</span> min/km</li>
+                           <li><span id="paceimperial">09:39</span> min/mile</li>
+                           <li><span id="speedmetric">10.00</span> km/h</li>
+                           <li><span id="speedimperial">06.21</span> mph</li>
+                        </ul>
+                     </div>
+                     <div class="col-xs-6">
+                        <div class="btn-group-vertical">
+                           <button class="btn btn-sm pacebtn" type="button" id="slower2">slower (--)</button>
+                           <button class="btn btn-sm pacebtn" type="button" id="slower1">slower (-)</button>
+                           <button class="btn btn-sm pacebtn" type="button" id="faster1">faster (+)</button>
+                           <button class="btn btn-sm pacebtn" type="button" id="faster2">faster (++)</button>
+                        </div>
+                     </div>
+    
                </div>
             </div>
          </div>
          <div class="panel panel-danger" id="distancePanel">
             <div class="panel-body">
                <label>Distance</label>
-               <div class="panel">
+              
                   <div class="row">
-                     <div class="col-12">
+                     <div class="col-xs-6 col-md-2">
                         <label>
                         <input type="text" class="form-control" id="inputDistance" value="10">
                         </label>
-                        <div class="btn-group" data-toggle="buttons" id="distUnitButton">
+                     </div>
+                     <div class="col-xs-6 col-md-10" id="distUnitButton">
+                        <div class="btn-group-vertical" data-toggle="buttons" >
                            <label class="btn btn-danger active distance_unit"><input type="radio" value="km">km</label> 
                            <label class="btn btn-danger distance_unit"><input type="radio" value="m">m</label> 
                            <label class="btn btn-danger distance_unit"><input type="radio" value="mile">miles</label>
@@ -69,44 +77,47 @@
                   </div>
                   <hr>
                   <div class="row">
-                     <div class="col-12">
-                        <button class="btn btn-xs btn-primary commondist" type="button" value="400">400m</button> 
-                        <button class="btn btn-lg btn-primary commondist" type="button" value="800">800m</button> 
-                        <button class="btn btn-lg btn-primary commondist" type="button" value="1000">1K</button> 
+                     <div class="col-xs-12">
+                        <button class="btn btn-primary commondist" type="button" value="400">400m</button> 
+                        <button class="btn btn-primary commondist" type="button" value="800">800m</button> 
+                        <button class="btn btn-primary commondist" type="button" value="1000">1K</button> 
                      </div>
                   </div>
                   <div class="row">
-                     <div class="col-12">
-                        <button class="btn btn-lg btn-primary commondist" type="button" value="1609.34">1 Mile</button> 
-                        <button class="btn btn-lg btn-primary commondist" type="button" value="5000">5K</button> 
-                        <button class="btn btn-lg btn-primary commondist" type="button" value="10000">10K</button> 
+                     <div class="col-xs-12">
+                        <button class="btn btn-primary commondist" type="button" value="1609.34">1 Mile</button> 
+                        <button class="btn btn-primary commondist" type="button" value="5000">5K</button> 
+                        <button class="btn btn-primary commondist" type="button" value="10000">10K</button> 
                      </div>
                   </div>
                   <div class="row">
-                     <div class="col-12">
+                     <div class="col-xs-12">
                         <button class="btn btn-sm btn-primary commondist" type="button" value="21100">Half-Marathon</button> 
                         <button class="btn btn-sm btn-primary commondist" type="button" value="42195">Marathon</button>
                      </div>
                   </div>
-               </div>
+         
             </div>
          </div>
          <div class="panel panel-success" id="timePanel">
             <div class="panel-body">
                <label>Time</label>
-               <div class="panel">
+ 
                   <div class="row">
-                     <div class="col-12">
+                     <div class="col-xs-12">
                         <label><input type="text" class="form-control" id="inputTime" value="01:00:00"></label>[HH:]MM:SS
                      </div>
                   </div>
-               </div>
+
             </div>
          </div>
-         <div class="panel" id="calcPanel">
+         <div class="panel panel-warning" id="calcPanel">
             <div class="panel-body">
                <label>Result</label>
-               <div class="panel" id="result"></div>
+             
+                  <div class="row" id="result">	
+                  </div>
+   
             </div>
          </div>
          <small><a href="http://codingtony.com/">&copy; Tony Bussi&egrave;res 2011 - 2013</a> the code is available on <a href="https://github.com/codingtony/pace">GitHub</a> under Apache v2.0 license</small> <script type="text/javascript">

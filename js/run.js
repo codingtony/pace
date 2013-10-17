@@ -128,6 +128,8 @@ App.init= function() {
 App.calculate = function() {
     var rdiv = $("#result");
     var distLabel = $("<label>");
+    var coldiv = $("<div>");
+    distLabel.appendTo(coldiv);
     Run.update();
 
     //make all distance unit control aware of the latest Run.distunit value
@@ -150,17 +152,20 @@ App.calculate = function() {
     rdiv.empty();
       switch (Run.mode) {
       case 'pace':
-	distLabel.remove();
+	
+	coldiv.remove();
 	$("#paceResult").clone().appendTo(rdiv);
 	break;
       case 'distance':
 	distLabel.text($("#inputDistance").val()+ " ");
-	distLabel.appendTo(rdiv);
-	$("#distUnitButton").clone(true).appendTo(distLabel);
+	coldiv.addClass("col-xs-6  col-md-2");
+	coldiv.appendTo(rdiv);
+	$("#distUnitButton").clone(true).appendTo(rdiv);
 	break;
       case 'time':
 	distLabel.text(Run.convertSecsToStr(Run.time)+" (HH:MM:SS)");
-	distLabel.appendTo(rdiv);
+	coldiv.addClass("col-xs-12");
+	coldiv.appendTo(rdiv);
 	break;
     
     }
@@ -264,9 +269,9 @@ Run.convertPaceSpeed=function (s, u, ut) {
 Run.meterTo=function (m,ut) { 
 				switch (ut) {
 						case 'km':
-							return (m / 1000).toFixed(3);
+							return (m / 1000).toFixed(2);
 						case 'mile' :
-							return (m / 1609.344).toFixed(3);
+							return (m / 1609.344).toFixed(2);
 						case 'm' :
 							return (m * 1).toFixed(0);
 				}
