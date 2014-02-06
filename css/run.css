@@ -2,6 +2,9 @@
 small {
     font-size:10px;
 }
+.btn-toolbar>.btn {
+	margin: 2px;
+}
 
 .btn.commondist {
     margin: 2px;
