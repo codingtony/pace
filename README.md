@@ -11,3 +11,7 @@ Uses jQuery 2.03 and Bootstrap 3.
 
 See a live example : http://codingtony.com/pace/
 
+
+Icon (for Android app) taken from http://freedesignfile.com/21993-run-people-silhouettes-design-vector/ 
+Released under Creative Commons (Attribution 3.0).
+
