@@ -3,8 +3,8 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
         id          = "com.codingtony.pace"
-        versionCode = "1" 
-        version     = "0.1" >
+        versionCode = "2" 
+        version     = "0.2.0" >
 
     <!-- versionCode is optional and Android only -->
     <name>Running Pace Calculator</name>
@@ -17,5 +17,5 @@ App that provides few tools to calculate running paces.
     <preference name="phonegap-version" value="3.3.0" />
     <gap:platform name="android" />
     <icon src="icons/Run-People-Silhouettes-design-vector.png"  />
-
+    <preference name="permissions" value="none"/>
 </widget>
