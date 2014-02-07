@@ -8,12 +8,15 @@ The latest version looks all right on mobile (Tested with chrome on Android)
 The code is still rough, feel free to improve.
 Uses jQuery 2.03 and Bootstrap 3.
 
-
 See a live example : http://codingtony.com/pace/
 
+---
 
-Icon (for Android app) taken from http://freedesignfile.com/21993-run-people-silhouettes-design-vector/ 
-Released under Creative Commons (Attribution 3.0).
+The Android App has been built using [PhoneGap](http://phonegap.com)
+
+Icon (for Android app) is taken from [freedesingfile.com](http://freedesignfile.com/21993-run-people-silhouettes-design-vector/). The icon is licensed under Creative Commons (Attribution 3.0).
 
 
-Phonegap built apk available here : https://build.phonegap.com/apps/765859/share
+
+Available on [Google Play Store](https://play.google.com/store/apps/details?id=com.codingtony.pacePhonegap).
+Apk available on [PhoneGap](https://build.phonegap.com/apps/765859/share)
