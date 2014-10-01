@@ -4,7 +4,7 @@
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
         id          = "com.codingtony.pace"
         versionCode = "2" 
-        version     = "0.2.0" >
+        version     = "0.2.1" >
 
     <!-- versionCode is optional and Android only -->
     <name>Running Pace Calculator</name>
@@ -14,7 +14,7 @@ App that provides few tools to calculate running paces.
     </description>
 
     <author href="http://codingtony.com" email="tony@codingtony.com">Tony Bussieres</author>
-    <preference name="phonegap-version" value="3.3.0" />
+    <preference name="phonegap-version" value="3.5.0" />
     <gap:platform name="android" />
     <icon src="icons/Run-People-Silhouettes-design-vector.png"  />
     <preference name="permissions" value="none"/>
