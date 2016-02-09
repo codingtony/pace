@@ -14,7 +14,7 @@ App that provides few tools to calculate running paces.
     </description>
 
     <author href="http://codingtony.com" email="tony@codingtony.com">Tony Bussieres</author>
-    <preference name="phonegap-version" value="3.6.3" />
+    <preference name="phonegap-version" value="cli-5.2.0" />
     <gap:platform name="android" />
     <icon src="icons/Run-People-Silhouettes-design-vector.png"  />
     <preference name="permissions" value="none"/>
